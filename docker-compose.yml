@@ -1,0 +1,175 @@
+version: "3.9"
+
+networks:
+  soy-grandez-net:
+    driver: bridge
+  backend-shared:
+    external: true
+    name: ${BACKEND_NETWORK_NAME:-laravel-backend-net}
+
+volumes:
+  engine-logs:
+    driver: local
+  engine-screenshots:
+    driver: local
+  playwright-cache:
+    driver: local
+
+services:
+  engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+      args:
+        BUILDKIT_INLINE_CACHE: "1"
+    image: soy-grandez-engine:${IMAGE_TAG:-latest}
+    container_name: soy-grandez-engine
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      BROWSER_HEADLESS: "true"
+      PYTHONUNBUFFERED: "1"
+
+    profiles:
+      - default
+      - production
+
+    volumes:
+      - engine-logs:/app/logs
+      - engine-screenshots:/app/screenshots
+      - playwright-cache:/ms-playwright
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.pickle:/app/token.pickle:ro
+
+    command: ["python", "worker.py"]
+
+    networks:
+      - soy-grandez-net
+      - backend-shared
+
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'python (worker\\.py|main\\.py.*--worker)' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+    cpus: "2.0"
+    mem_limit: 2g
+    mem_reservation: 512m
+    shm_size: "1g"
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  engine-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+      args:
+        BUILDKIT_INLINE_CACHE: "1"
+    image: soy-grandez-engine:dev
+    container_name: soy-grandez-engine-dev
+    env_file:
+      - .env
+    environment:
+      BROWSER_HEADLESS: "true"
+      PYTHONUNBUFFERED: "1"
+      APP_ENV: development
+      LOG_LEVEL: DEBUG
+
+    profiles:
+      - dev
+
+    volumes:
+      - ./:/app
+      - /app/__pycache__
+      - /app/*.pyc
+      - engine-logs:/app/logs
+      - engine-screenshots:/app/screenshots
+      - playwright-cache:/ms-playwright
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.pickle:/app/token.pickle:ro
+
+    command: ["python", "main.py", "--worker"]
+
+    networks:
+      - soy-grandez-net
+      - backend-shared
+
+    shm_size: "2g"
+
+    stdin_open: true
+    tty: true
+
+  engine-sync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: soy-grandez-engine:${IMAGE_TAG:-latest}
+    container_name: soy-grandez-engine-sync
+    env_file:
+      - .env
+    environment:
+      BROWSER_HEADLESS: "true"
+      PYTHONUNBUFFERED: "1"
+
+    profiles:
+      - sync-once
+
+    volumes:
+      - engine-logs:/app/logs
+      - engine-screenshots:/app/screenshots
+      - playwright-cache:/ms-playwright
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.pickle:/app/token.pickle:ro
+
+    command: ["python", "main.py", "--sync"]
+
+    networks:
+      - soy-grandez-net
+      - backend-shared
+
+    shm_size: "1g"
+
+    restart: "no"
+
+  engine-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: soy-grandez-engine:${IMAGE_TAG:-latest}
+    container_name: soy-grandez-engine-test
+    env_file:
+      - .env
+    environment:
+      BROWSER_HEADLESS: "true"
+      PYTHONUNBUFFERED: "1"
+
+    profiles:
+      - test
+
+    volumes:
+      - engine-logs:/app/logs
+      - engine-screenshots:/app/screenshots
+      - playwright-cache:/ms-playwright
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.pickle:/app/token.pickle:ro
+
+    command: ["python", "main.py", "--test"]
+
+    networks:
+      - soy-grandez-net
+      - backend-shared
+
+    shm_size: "1g"
+
+    restart: "no"

@@ -308,7 +308,175 @@ Las pruebas validan:
 - Autenticación OAuth2 segura para Gmail API
 - Tokens de acceso almacenados localmente con pickle
 
-## 📝 Próximos Pasos (Fase 5)
+## 🐳 Despliegue con Docker
+
+El motor cuenta con una capa de contenedorización optimizada para desarrollo local (WSL) y producción en VPS (Contabo).
+
+### Archivos Generados
+
+| Archivo | Propósito |
+|---------|-----------|
+| [Dockerfile](file:///c:/xampp/htdocs/soy-grandez-engine/Dockerfile) | Build multistage (Python 3.11-slim + dependencias Playwright/Chromium |
+| [docker-compose.yml](file:///c:/xampp/htdocs/soy-grandez-engine/docker-compose.yml) | Orquestación de servicios con profiles para dev/prod/sync/test |
+| [docker-entrypoint.sh](file:///c:/xampp/htdocs/soy-grandez-engine/docker-entrypoint.sh) | Script de inicialización + validación de variables + instalación on-demand de Chromium |
+| [.dockerignore](file:///c:/xampp/htdocs/soy-grandez-engine/.dockerignore) | Optimización del contexto de build |
+
+---
+
+### 🚀 Despliegue Rápido
+
+#### 1. Preparación
+
+```bash
+cp .env.example .env
+```
+
+Edita `.env` con tus credenciales. **Importante para producción**:
+- `BROWSER_HEADLESS=true`
+- `APP_ENV=production`
+- `LOG_LEVEL=INFO`
+- `DB_HOST` debe apuntar al nombre del servicio MySQL o IP del VPS
+
+#### 2. Red Compartida con Backend
+
+El `docker-compose.yml` se conecta a una red Docker externa `laravel-backend-net` para comunicarse con Laravel y MySQL del stack principal.
+
+**Antes del primer despliegue (solo una vez):**
+
+```bash
+docker network create laravel-backend-net
+```
+
+O define tu propia red en el `.env`:
+```env
+BACKEND_NETWORK_NAME=mi-red-personalizada
+```
+
+Si el motor necesita conectarse a recursos fuera de Docker (MySQL o API en el host), usa `host.docker.internal` o la IP real del VPS.
+
+---
+
+### 💻 Entorno de Desarrollo Local (WSL / Linux)
+
+Modo interactivo con **hot-reload del código fuente**:
+
+```bash
+docker compose --profile dev up --build -d
+```
+
+Ver logs en tiempo real:
+```bash
+docker compose --profile dev logs -f engine-dev
+```
+
+Ejecutar comandos ad-hoc (sync, tests, etc.):
+```bash
+docker compose --profile dev exec engine-dev python main.py --test
+docker compose --profile dev exec engine-dev python main.py --sync
+docker compose --profile dev exec engine-dev python main.py --account 123 netflix
+```
+
+Detener:
+```bash
+docker compose --profile dev down
+```
+
+---
+
+### 🌐 Entorno de Producción (VPS Contabo)
+
+#### Levantar el worker en segundo plano:
+
+```bash
+docker compose --profile production up --build -d
+```
+
+Ver estado y logs:
+```bash
+docker compose --profile production ps
+docker compose --profile production logs -f engine --tail 200
+```
+
+Verificar healthcheck:
+```bash
+docker inspect --format='{{.State.Health.Status}}' soy-grandez-engine
+```
+
+#### Ejecutar Sync una sola vez (production):
+
+```bash
+docker compose --profile sync-once up --build engine-sync
+```
+
+#### Ejecutar tests de integración (production):
+
+```bash
+docker compose --profile test up --build engine-test
+```
+
+#### Comandos útiles de mantenimiento:
+
+```bash
+# Reiniciar servicio
+docker compose --profile production restart engine
+
+# Rebuild sin cache
+docker compose --profile production build --no-cache && docker compose --profile production up -d
+
+# Eliminar contenedor, preservando volúmenes (logs, etc.)
+docker compose --profile production down
+
+# Limpieza completa (ELIMINA volúmenes de logs/cache - USAR CON CUIDADO)
+docker compose down -v
+```
+
+---
+
+### 📦 Volúmenes y Persistencia
+
+| Volumen | Ruta en Host / Contenedor | Contenido |
+|---------|---------------------------|-----------|
+| `engine-logs` | `/app/logs` | Archivos de log rotados (app + errores) |
+| `engine-screenshots` | `/app/screenshots` | Capturas de error de Playwright |
+| `playwright-cache` | `/ms-playwright` | Binarios de Chromium cacheados |
+| Bind mount (dev) | `./:/app` | Código fuente (solo perfil `dev`) |
+| Bind mount creds | `./credentials.json` (ro) | OAuth2 Gmail API |
+| Bind mount token | `./token.pickle` (ro) | Token OAuth persistido |
+
+---
+
+### ⚙️ Configuración de Recursos
+
+Perfil production aplica límites:
+- **CPU**: 2 cores
+- **Memoria**: 2 GB límite / 512 MB reserva
+- **SHM**: 1 GB compartida
+- **Logs**: 5 archivos × 10 MB cada uno
+- **Restart**: unless-stopped
+
+Ajusta estos valores en `docker-compose.yml` según capacidad del VPS.
+
+---
+
+### 🔍 Troubleshooting Playwright dentro del contenedor
+
+```bash
+# Verificar que Chromium está instalado
+docker compose --profile production exec engine playwright --version
+
+# Instalar / reinstalar Chromium manualmente
+docker compose --profile production exec engine python -m playwright install --with-deps chromium
+
+# Correr prueba básica del navegador
+docker compose --profile test up --build engine-test
+
+# Si hay errores de shared memory
+# Aumentar shm_size en docker-compose.yml o arrancar con --ipc=host
+```
+
+---
+
+### 📝 Próximos Pasos (Fase 5)
 
 - Implementar descifrado de credenciales con cryptography
 - Sistema de colas distribuido (Celery/Redis) para escalabilidad
