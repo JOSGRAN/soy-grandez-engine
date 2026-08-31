@@ -1,0 +1,5 @@
+UPDATE credentials 
+SET username = 'correo_real_del_cliente@gmail.com', 
+    encrypted_password = 'password_real_del_cliente', 
+    email = 'correo_real_del_cliente@gmail.com' 
+WHERE id = 1;

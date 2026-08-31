@@ -1,3 +1,6 @@
+from __future__ import annotations
+# ... resto de las importaciones
+
 import asyncio
 import time
 from enum import Enum

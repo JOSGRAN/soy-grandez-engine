@@ -1,0 +1,91 @@
+2026-08-29 16:20:53 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:20:53 - orchestrator - ERROR - [logger.py:119] - Task failed: process_account_1 (Duration: 0:00:00) - Error: name 'AuthenticationException' is not defined
+Traceback (most recent call last):
+  File "/home/lincol/soy-grandez-engine/services/orchestrator_service.py", line 170, in process_account
+    raise ScraperException(f"No credentials found for account {account_id}")
+core.exceptions.ScraperException: No credentials found for account 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lincol/soy-grandez-engine/services/orchestrator_service.py", line 221, in process_account
+    except AuthenticationException as e:
+           ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'AuthenticationException' is not defined
+2026-08-29 16:20:53 - orchestrator - ERROR - [orchestrator_service.py:139] - Sync failed: name 'AuthenticationException' is not defined
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 1: No credentials found for account 1
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 2: No credentials found for account 2
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 3: No credentials found for account 3
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 4: No credentials found for account 4
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 5: No credentials found for account 5
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 6: No credentials found for account 6
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 7: No credentials found for account 7
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:281] - Error getting credentials: '' is not a valid PlatformType
+2026-08-29 16:22:09 - orchestrator - ERROR - [orchestrator_service.py:242] - Scraper operation failed for account 8: No credentials found for account 8
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 1: No credentials found for account 1
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 2: No credentials found for account 2
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 3: No credentials found for account 3
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 4: No credentials found for account 4
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 5: No credentials found for account 5
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 6: No credentials found for account 6
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 7: No credentials found for account 7
+2026-08-29 16:24:20 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 8: No credentials found for account 8
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 1: No credentials found for account 1
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 2: No credentials found for account 2
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 3: No credentials found for account 3
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 4: No credentials found for account 4
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 5: No credentials found for account 5
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 6: No credentials found for account 6
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 7: No credentials found for account 7
+2026-08-29 16:27:57 - orchestrator - ERROR - [orchestrator_service.py:249] - Scraper operation failed for account 8: No credentials found for account 8
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 1: No credentials found for account 1
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 2: No credentials found for account 2
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 3: No credentials found for account 3
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 4: No credentials found for account 4
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 5: No credentials found for account 5
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 6: No credentials found for account 6
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 7: No credentials found for account 7
+2026-08-29 16:31:05 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 8: No credentials found for account 8
+2026-08-29 16:32:41 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-29 16:35:17 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-29 16:35:50 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 2: Failed to login to disney premium
+2026-08-29 16:36:30 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 3: Failed to login to disney premium
+2026-08-30 19:03:47 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-30 19:04:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 2: Failed to login to disney premium
+2026-08-30 19:06:06 - orchestrator - ERROR - [orchestrator_service.py:232] - Scraper operation failed for account 3: Failed to update password in disney premium
+2026-08-30 19:06:46 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 4: Failed to login to disney standard
+2026-08-30 19:07:26 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 5: Failed to login to disney premium
+2026-08-30 19:07:26 - orchestrator - ERROR - [orchestrator_service.py:242] - Unexpected error processing account 6: Unsupported platform: crunchyroll
+2026-08-30 19:08:05 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 7: Failed to login to disney standard
+2026-08-30 19:08:45 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 8: Failed to login to disney premium
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 2: Failed to login to disney premium
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 3: Failed to login to disney premium
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 4: Failed to login to disney standard
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 5: Failed to login to disney premium
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 6: Failed to login to crunchyroll mega fan
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 7: Failed to login to disney standard
+2026-08-30 19:14:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 8: Failed to login to disney premium
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 2: Failed to login to disney premium
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 3: Failed to login to disney premium
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 4: Failed to login to disney standard
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 5: Failed to login to disney premium
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 6: Failed to login to crunchyroll mega fan
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 7: Failed to login to disney standard
+2026-08-30 19:17:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 8: Failed to login to disney premium
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 2: Failed to login to disney premium
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 3: Failed to login to disney premium
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 4: Failed to login to disney standard
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 5: Failed to login to disney premium
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 6: Failed to login to crunchyroll mega fan
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 7: Failed to login to disney standard
+2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 8: Failed to login to disney premium

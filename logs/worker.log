@@ -1,0 +1,180 @@
+2026-08-29 16:08:28 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:08:28 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:08:28 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:08:28 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:08:28 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:08:28 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:08:28 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:08:29 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:08:36 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:37 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:38 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:38 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:38 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:41 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:41 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:41 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:41 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:08:41 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:09:32 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:09:32 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:09:32 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:09:32 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:09:32 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:09:32 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:09:32 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:09:33 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:11:14 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:11:14 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:15:52 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:15:52 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:15:52 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:15:52 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:15:52 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:15:52 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:15:52 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:15:53 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:19:09 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:19:09 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:19:09 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:19:09 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:19:09 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:19:09 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:19:09 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:19:10 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:19:59 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:20:00 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:20:51 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:20:51 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:20:51 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:20:51 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:20:51 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:20:51 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:20:51 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:20:52 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:22:07 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:22:07 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:22:07 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:22:07 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:22:07 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:22:07 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:22:07 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:22:08 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:23:37 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:23:39 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:24:19 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:24:19 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:24:19 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:24:19 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:24:19 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:24:19 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:24:19 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:24:20 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:25:22 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-29 16:27:56 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:27:56 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:27:56 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:27:56 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:27:56 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:27:56 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:27:56 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:27:57 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:31:03 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:31:03 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:31:03 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:31:03 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:31:03 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:31:03 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:31:03 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:31:04 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:31:58 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:31:58 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:31:58 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:31:58 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:31:58 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:31:58 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:31:58 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:31:59 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-29 16:34:14 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-29 16:34:14 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-29 16:34:14 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-29 16:34:14 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-29 16:34:14 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-29 16:34:14 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-29 16:34:14 - worker - INFO - [worker.py:43] - 
+2026-08-29 16:34:15 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-30 18:59:46 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-30 18:59:46 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-30 18:59:46 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-30 18:59:46 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-30 18:59:46 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-30 18:59:46 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-30 18:59:46 - worker - INFO - [worker.py:43] - 
+2026-08-30 18:59:49 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-30 19:01:44 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:02:12 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:02:13 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:02:13 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:02:14 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:02:14 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:02:37 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-30 19:02:37 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-30 19:02:37 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-30 19:02:37 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-30 19:02:37 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-30 19:02:37 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-30 19:02:37 - worker - INFO - [worker.py:43] - 
+2026-08-30 19:02:39 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-30 19:13:36 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:36 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:36 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:37 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:37 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:37 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:37 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:40 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:40 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:40 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:40 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:41 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:41 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:53 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:13:54 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:14:20 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-30 19:14:20 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-30 19:14:20 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-30 19:14:20 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-30 19:14:20 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-30 19:14:20 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-30 19:14:20 - worker - INFO - [worker.py:43] - 
+2026-08-30 19:14:22 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-30 19:15:05 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:07 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:11 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:11 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:11 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:11 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:56 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:56 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:57 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:57 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:57 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:15:57 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:16:02 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:17:07 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-30 19:17:07 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-30 19:17:07 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-30 19:17:07 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-30 19:17:07 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-30 19:17:07 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-30 19:17:07 - worker - INFO - [worker.py:43] - 
+2026-08-30 19:17:08 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully
+2026-08-30 19:17:28 - worker - INFO - [worker.py:32] - Received signal 2, initiating graceful shutdown...
+2026-08-30 19:18:22 - worker - INFO - [worker.py:37] - ============================================================
+2026-08-30 19:18:22 - worker - INFO - [worker.py:38] - Soy Grandez Engine - Background Worker
+2026-08-30 19:18:22 - worker - INFO - [worker.py:39] - ============================================================
+2026-08-30 19:18:22 - worker - INFO - [worker.py:40] - Environment: development
+2026-08-30 19:18:22 - worker - INFO - [worker.py:41] - Sync Interval: 60 minutes
+2026-08-30 19:18:22 - worker - INFO - [worker.py:42] - Max Concurrent Tasks: 3
+2026-08-30 19:18:22 - worker - INFO - [worker.py:43] - 
+2026-08-30 19:18:23 - worker - INFO - [worker.py:51] - ✅ Worker initialized successfully

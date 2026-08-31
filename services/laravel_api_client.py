@@ -51,15 +51,23 @@ class LaravelAPIClient:
         try:
             async with httpx.AsyncClient() as client:
                 response = await client.get(
-                    f"{self.base_url}/subscriptions/expired",
+                    f"{self.base_url}/subscriptions",
                     headers=self.auth_service.get_auth_headers(),
+                    params={"status": "expired"},
                     timeout=30.0
                 )
                 
                 if response.status_code == 200:
                     data = response.json()
-                    logger.info(f"Retrieved {len(data.get('data', []))} expired subscriptions")
-                    return data.get('data', [])
+                    if isinstance(data, list):
+                        subscriptions = data
+                    elif isinstance(data, dict):
+                        subscriptions = data.get('data', [])
+                    else:
+                        subscriptions = []
+                        
+                    logger.info(f"Retrieved {len(subscriptions)} expired subscriptions")
+                    return subscriptions
                 else:
                     logger.error(f"Failed to get expired subscriptions: {response.status_code} - {response.text}")
                     return []

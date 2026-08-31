@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData, text  # <-- 1. Importar text aquí
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.exc import SQLAlchemyError
 from contextlib import contextmanager
@@ -51,7 +51,7 @@ class DatabaseConnection:
     def test_connection(self) -> bool:
         try:
             with self.get_session() as session:
-                session.execute("SELECT 1")
+                session.execute(text("SELECT 1"))  # <-- 2. Envuelto en text()
             logger.info("Database connection test successful")
             return True
         except SQLAlchemyError as e:

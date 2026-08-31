@@ -1,0 +1,75 @@
+2026-08-29 14:48:43 - main - ERROR - [main.py:27] - ❌ Database connection failed
+2026-08-29 14:48:55 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'host.docker.internal' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 14:49:56 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 14:56:44 - main - ERROR - [main.py:27] - ❌ Database connection failed
+2026-08-29 14:56:54 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'host.docker.internal' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 14:57:55 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 14:58:47 - main - ERROR - [main.py:27] - ❌ Database connection failed
+2026-08-29 14:58:47 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 14:59:47 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:05:01 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.ProgrammingError) (1146, "Table 'stream_admin_db.credentials' doesn't exist")
+[SQL: SELECT credentials.id AS credentials_id, credentials.platform AS credentials_platform, credentials.username AS credentials_username, credentials.encrypted_password AS credentials_encrypted_password, credentials.encrypted_api_key AS credentials_encrypted_api_key, credentials.email AS credentials_email, credentials.phone AS credentials_phone, credentials.is_active AS credentials_is_active, credentials.created_at AS credentials_created_at, credentials.updated_at AS credentials_updated_at 
+FROM credentials 
+WHERE credentials.is_active = true]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-08-29 15:05:13 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.ProgrammingError) (1146, "Table 'stream_admin_db.credentials' doesn't exist")
+[SQL: SELECT credentials.id AS credentials_id, credentials.platform AS credentials_platform, credentials.username AS credentials_username, credentials.encrypted_password AS credentials_encrypted_password, credentials.encrypted_api_key AS credentials_encrypted_api_key, credentials.email AS credentials_email, credentials.phone AS credentials_phone, credentials.is_active AS credentials_is_active, credentials.created_at AS credentials_created_at, credentials.updated_at AS credentials_updated_at 
+FROM credentials 
+WHERE credentials.is_active = true]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-08-29 15:06:13 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:10:01 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.ProgrammingError) (1146, "Table 'stream_admin_db.credentials' doesn't exist")
+[SQL: SELECT credentials.id AS credentials_id, credentials.platform AS credentials_platform, credentials.username AS credentials_username, credentials.encrypted_password AS credentials_encrypted_password, credentials.encrypted_api_key AS credentials_encrypted_api_key, credentials.email AS credentials_email, credentials.phone AS credentials_phone, credentials.is_active AS credentials_is_active, credentials.created_at AS credentials_created_at, credentials.updated_at AS credentials_updated_at 
+FROM credentials 
+WHERE credentials.is_active = true]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-08-29 15:11:02 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:14:36 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (1054, "Unknown column 'credentials.platform' in 'field list'")
+[SQL: SELECT credentials.id AS credentials_id, credentials.platform AS credentials_platform, credentials.username AS credentials_username, credentials.encrypted_password AS credentials_encrypted_password, credentials.encrypted_api_key AS credentials_encrypted_api_key, credentials.email AS credentials_email, credentials.phone AS credentials_phone, credentials.is_active AS credentials_is_active, credentials.created_at AS credentials_created_at, credentials.updated_at AS credentials_updated_at 
+FROM credentials 
+WHERE credentials.is_active = true]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 15:14:37 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:17:11 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (1054, "Unknown column 'credentials.platform' in 'field list'")
+[SQL: SELECT credentials.id AS credentials_id, credentials.platform AS credentials_platform, credentials.username AS credentials_username, credentials.encrypted_password AS credentials_encrypted_password, credentials.encrypted_api_key AS credentials_encrypted_api_key, credentials.email AS credentials_email, credentials.phone AS credentials_phone, credentials.is_active AS credentials_is_active, credentials.created_at AS credentials_created_at, credentials.updated_at AS credentials_updated_at 
+FROM credentials 
+WHERE credentials.is_active = true]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 15:17:11 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:17:18 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (1054, "Unknown column 'credentials.platform' in 'field list'")
+[SQL: SELECT credentials.id AS credentials_id, credentials.platform AS credentials_platform, credentials.username AS credentials_username, credentials.encrypted_password AS credentials_encrypted_password, credentials.encrypted_api_key AS credentials_encrypted_api_key, credentials.email AS credentials_email, credentials.phone AS credentials_phone, credentials.is_active AS credentials_is_active, credentials.created_at AS credentials_created_at, credentials.updated_at AS credentials_updated_at 
+FROM credentials 
+WHERE credentials.is_active = true]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 15:17:19 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:39:26 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (1054, "Unknown column 'accounts.platform_account_id' in 'field list'")
+[SQL: SELECT accounts.id AS accounts_id, accounts.platform_account_id AS accounts_platform_account_id, accounts.account_name AS accounts_account_name, accounts.subscription_end_date AS accounts_subscription_end_date, credentials.platform AS credentials_platform, credentials.username AS credentials_username 
+FROM accounts INNER JOIN credentials ON accounts.credential_id = credentials.id 
+WHERE accounts.subscription_end_date < %(subscription_end_date_1)s AND accounts.status = %(status_1)s]
+[parameters: {'subscription_end_date_1': datetime.datetime(2026, 8, 29, 20, 39, 26, 831067), 'status_1': 'ACTIVE'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 15:39:27 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:39:31 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (1054, "Unknown column 'accounts.platform_account_id' in 'field list'")
+[SQL: SELECT accounts.id AS accounts_id, accounts.platform_account_id AS accounts_platform_account_id, accounts.account_name AS accounts_account_name, accounts.subscription_end_date AS accounts_subscription_end_date, credentials.platform AS credentials_platform, credentials.username AS credentials_username 
+FROM accounts INNER JOIN credentials ON accounts.credential_id = credentials.id 
+WHERE accounts.subscription_end_date < %(subscription_end_date_1)s AND accounts.status = %(status_1)s]
+[parameters: {'subscription_end_date_1': datetime.datetime(2026, 8, 29, 20, 39, 31, 621399), 'status_1': 'ACTIVE'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 15:39:31 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:50:45 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (1054, "Unknown column 'accounts.platform_account_id' in 'field list'")
+[SQL: SELECT accounts.id AS accounts_id, accounts.platform_account_id AS accounts_platform_account_id, accounts.account_name AS accounts_account_name, accounts.subscription_end_date AS accounts_subscription_end_date, credentials.platform AS credentials_platform, credentials.username AS credentials_username 
+FROM accounts INNER JOIN credentials ON accounts.credential_id = credentials.id 
+WHERE accounts.subscription_end_date < %(subscription_end_date_1)s AND accounts.status = %(status_1)s]
+[parameters: {'subscription_end_date_1': datetime.datetime(2026, 8, 29, 20, 50, 45, 936714), 'status_1': 'ACTIVE'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 15:50:46 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-29 15:51:47 - main - ERROR - [main.py:60] - ❌ Credential repository error: (pymysql.err.OperationalError) (1054, "Unknown column 'accounts.nombre_real_en_tu_mysql' in 'field list'")
+[SQL: SELECT accounts.id AS accounts_id, accounts.nombre_real_en_tu_mysql AS accounts_nombre_real_en_tu_mysql, accounts.account_name AS accounts_account_name, accounts.subscription_end_date AS accounts_subscription_end_date, credentials.platform AS credentials_platform, credentials.username AS credentials_username 
+FROM accounts INNER JOIN credentials ON accounts.credential_id = credentials.id 
+WHERE accounts.subscription_end_date < %(subscription_end_date_1)s AND accounts.status = %(status_1)s]
+[parameters: {'subscription_end_date_1': datetime.datetime(2026, 8, 29, 20, 51, 47, 36450), 'status_1': 'ACTIVE'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-29 15:51:47 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
