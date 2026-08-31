@@ -73,3 +73,16 @@ WHERE accounts.subscription_end_date < %(subscription_end_date_1)s AND accounts.
 [parameters: {'subscription_end_date_1': datetime.datetime(2026, 8, 29, 20, 51, 47, 36450), 'status_1': 'ACTIVE'}]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-08-29 15:51:47 - main - ERROR - [main.py:176] - ❌ Some integration tests failed. Please check the logs above.
+2026-08-30 22:04:17 - main - ERROR - [main.py:239] - ❌ Account processing error: 'OrchestratorService' object has no attribute 'process_single_account'
+2026-08-30 22:05:00 - main - ERROR - [main.py:239] - ❌ Account processing error: 'OrchestratorService' object has no attribute 'process_single_account'
+2026-08-30 22:05:08 - main - ERROR - [main.py:239] - ❌ Account processing error: 'OrchestratorService' object has no attribute 'process_single_account'
+2026-08-30 22:05:42 - main - ERROR - [main.py:239] - ❌ Account processing error: 'OrchestratorService' object has no attribute 'process_single_account'
+2026-08-30 22:06:26 - main - ERROR - [main.py:239] - ❌ Account processing error: 'OrchestratorService' object has no attribute 'process_single_account'
+2026-08-30 22:07:16 - main - ERROR - [main.py:239] - ❌ Account processing error: 'OrchestratorService' object has no attribute 'process_single_account'
+2026-08-30 22:07:47 - main - ERROR - [main.py:235] - ❌ Account processing failed: authentication_failed
+2026-08-30 22:10:10 - main - ERROR - [main.py:235] - ❌ Account processing failed: authentication_failed
+2026-08-30 22:16:56 - main - ERROR - [main.py:235] - ❌ Account processing failed: authentication_failed
+2026-08-30 22:20:08 - main - ERROR - [main.py:235] - ❌ Account processing failed: authentication_failed
+2026-08-30 22:21:52 - main - ERROR - [main.py:235] - ❌ Account processing failed: authentication_failed
+2026-08-30 22:24:38 - main - ERROR - [main.py:235] - ❌ Account processing failed: authentication_failed
+2026-08-30 22:29:38 - main - ERROR - [main.py:235] - ❌ Account processing failed: authentication_failed

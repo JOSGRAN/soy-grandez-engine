@@ -645,3 +645,180 @@ NameError: name 'AuthenticationException' is not defined
 2026-08-30 19:18:24 - orchestrator - INFO - [orchestrator_service.py:329] - Updated Laravel with 8 account results
 2026-08-30 19:18:24 - orchestrator - INFO - [logger.py:117] - Task completed successfully: sync_expired_accounts (Duration: 0:00:01)
 2026-08-30 19:18:24 - orchestrator - INFO - [orchestrator_service.py:343] - Scheduled sync completed: {'success': True, 'processed': 8, 'successful': 0, 'failed': 8, 'accounts': [{'success': False, 'account_id': 1, 'platform': 'disney premium', 'error': 'authentication_failed', 'message': 'Failed to login to disney premium'}, {'success': False, 'account_id': 2, 'platform': 'disney premium', 'error': 'authentication_failed', 'message': 'Failed to login to disney premium'}, {'success': False, 'account_id': 3, 'platform': 'disney premium', 'error': 'authentication_failed', 'message': 'Failed to login to disney premium'}, {'success': False, 'account_id': 4, 'platform': 'disney standard', 'error': 'authentication_failed', 'message': 'Failed to login to disney standard'}, {'success': False, 'account_id': 5, 'platform': 'disney premium', 'error': 'authentication_failed', 'message': 'Failed to login to disney premium'}, {'success': False, 'account_id': 6, 'platform': 'crunchyroll mega fan', 'error': 'authentication_failed', 'message': 'Failed to login to crunchyroll mega fan'}, {'success': False, 'account_id': 7, 'platform': 'disney standard', 'error': 'authentication_failed', 'message': 'Failed to login to disney standard'}, {'success': False, 'account_id': 8, 'platform': 'disney premium', 'error': 'authentication_failed', 'message': 'Failed to login to disney premium'}]}
+2026-08-30 22:03:19 - orchestrator - INFO - [logger.py:109] - Starting task: sync_expired_accounts
+2026-08-30 22:03:19 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:93] - Step 1: Fetching expired accounts from Laravel API...
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:105] - Found 8 expired accounts
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney premium)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 2 (ID: 2, Platform: disney premium)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_2
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 2
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 2, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 2: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_2 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 3 (ID: 3, Platform: disney premium)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_3
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 3
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 3, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 3: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_3 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 4 (ID: 4, Platform: disney standard)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_4
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 4
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 4, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney standard
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney standard
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 4: Failed to login to disney standard
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_4 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 5 (ID: 5, Platform: disney premium)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_5
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 5
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 5, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 5: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_5 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 6 (ID: 6, Platform: crunchyroll mega fan)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_6
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 6
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 6, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for crunchyroll mega fan
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into crunchyroll mega fan
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 6: Failed to login to crunchyroll mega fan
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_6 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 7 (ID: 7, Platform: disney standard)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_7
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 7
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 7, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney standard
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney standard
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 7: Failed to login to disney standard
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_7 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 8 (ID: 8, Platform: disney premium)
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_8
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 8
+2026-08-30 22:03:22 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 8, using mock fallback.
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 8: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_8 (Duration: 0:00:00)
+2026-08-30 22:03:22 - orchestrator - INFO - [orchestrator_service.py:112] - Step 3: Updating Laravel with sync results...
+2026-08-30 22:03:23 - orchestrator - INFO - [orchestrator_service.py:329] - Updated Laravel with 8 account results
+2026-08-30 22:03:23 - orchestrator - INFO - [logger.py:117] - Task completed successfully: sync_expired_accounts (Duration: 0:00:03)
+2026-08-30 22:03:23 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:03:23 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:04:17 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:04:17 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:05:00 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:05:00 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:05:08 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:05:08 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:05:42 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:05:42 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:06:26 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:06:26 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:07:16 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:07:16 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:07:46 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:07:47 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:07:47 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:07:47 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney)
+2026-08-30 22:07:47 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:07:47 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:07:47 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:07:47 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney
+2026-08-30 22:07:47 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney
+2026-08-30 22:07:47 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:07:47 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:00)
+2026-08-30 22:07:47 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:07:47 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:09:45 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:09:46 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:09:46 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:09:46 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney)
+2026-08-30 22:09:46 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:09:46 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:09:46 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:09:46 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney
+2026-08-30 22:09:46 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney
+2026-08-30 22:10:10 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:10:10 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:24)
+2026-08-30 22:10:10 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:10:11 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:16:44 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:16:45 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:16:45 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:16:45 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney)
+2026-08-30 22:16:45 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:16:45 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:16:45 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:16:45 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney
+2026-08-30 22:16:45 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney
+2026-08-30 22:16:56 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:16:56 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:11)
+2026-08-30 22:16:56 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:16:56 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:19:55 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:19:56 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:19:56 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:19:56 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney)
+2026-08-30 22:19:56 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:19:56 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:19:56 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:19:56 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney
+2026-08-30 22:19:56 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney
+2026-08-30 22:20:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:20:08 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:11)
+2026-08-30 22:20:08 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:20:08 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:21:41 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:21:42 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:21:42 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:21:42 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney)
+2026-08-30 22:21:42 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:21:42 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:21:42 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:21:42 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney
+2026-08-30 22:21:42 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney
+2026-08-30 22:21:52 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:21:52 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:09)
+2026-08-30 22:21:52 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:21:52 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:24:14 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:24:15 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:24:15 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:24:15 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney)
+2026-08-30 22:24:15 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:24:15 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:24:15 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:24:15 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney
+2026-08-30 22:24:15 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney
+2026-08-30 22:24:38 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:24:38 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:22)
+2026-08-30 22:24:38 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:24:38 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete
+2026-08-30 22:29:08 - orchestrator - INFO - [orchestrator_service.py:44] - Initializing Orchestrator Service...
+2026-08-30 22:29:09 - orchestrator - INFO - [orchestrator_service.py:65] - Orchestrator Service initialized successfully
+2026-08-30 22:29:09 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:29:09 - orchestrator - INFO - [orchestrator_service.py:159] - Processing account: Account 1 (ID: 1, Platform: disney)
+2026-08-30 22:29:09 - orchestrator - INFO - [logger.py:109] - Starting task: process_account_1
+2026-08-30 22:29:09 - orchestrator - INFO - [orchestrator_service.py:163] - Step 1: Getting credentials for account 1
+2026-08-30 22:29:09 - orchestrator - WARNING - [orchestrator_service.py:259] - No credential found in DB for account 1, using mock fallback.
+2026-08-30 22:29:09 - orchestrator - INFO - [orchestrator_service.py:169] - Step 2: Initializing scraper for disney
+2026-08-30 22:29:09 - orchestrator - INFO - [orchestrator_service.py:175] - Step 3: Logging into disney
+2026-08-30 22:29:38 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:29:38 - orchestrator - INFO - [logger.py:117] - Task completed successfully: process_account_1 (Duration: 0:00:28)
+2026-08-30 22:29:38 - orchestrator - INFO - [orchestrator_service.py:73] - Shutting down Orchestrator Service...
+2026-08-30 22:29:38 - orchestrator - INFO - [orchestrator_service.py:83] - Orchestrator Service shutdown complete

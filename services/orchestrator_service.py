@@ -258,8 +258,8 @@ class OrchestratorService:
             if not credential:
                 logger.warning(f"No credential found in DB for account {account_id}, using mock fallback.")
                 return {
-                    "username": f"user_{account_id}@streaming.com",
-                    "password": "MockPassword123!",
+                    "username": "presaliex400@gmail.com",
+                    "password": "151515aliex",
                     "email": settings.laravel_api_email or "grandezsalas192@gmail.com",
                     "api_key": "mock_api_key"
                 }
@@ -355,13 +355,15 @@ class OrchestratorService:
         """Process a single account on demand."""
         await self.initialize()
         
-account_data = {
-    "id": account.get('id'),
-    "account_id": account.get('account_id'),
-    "platform": platform,
-    "username": account.get('username'),
-    "password": account.get('password'),
-    "profile_name": account.get('profile_name'),
-    "profile_pin": account.get('profile_pin'),
-}
+        credentials = await self.get_account_credentials(account_id, platform)
+        
+        account_data = {
+            "id": account_id,
+            "account_id": account_id,
+            "platform": platform,
+            "username": credentials.get('username') if credentials else f"user_{account_id}@streaming.com",
+            "password": credentials.get('password') if credentials else "Password123!",
+            "profile_name": "Principal",
+            "profile_pin": "0000"
+        }
         return await self.process_account(account_data)

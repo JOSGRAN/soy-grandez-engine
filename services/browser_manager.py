@@ -93,18 +93,19 @@ class BrowserManager:
                 };
             """)
             
+            # Asignar automáticamente la página principal por defecto
             self.page = await self.context.new_page()
-            
-            # Set default timeout
-            self.page.set_default_timeout(30000)
-            self.page.set_default_navigation_timeout(30000)
-            
-            logger.info("Browser started successfully")
             return True
             
         except Exception as e:
             logger.error(f"Error starting browser: {e}")
             return False
+
+    async def new_page(self) -> Page:
+        """Crea y retorna una nueva página adicional del navegador."""
+        if not self.browser or not self.context:
+            await self.start()
+        return await self.context.new_page()
     
     async def navigate(self, url: str, wait_until: str = "networkidle") -> bool:
         try:

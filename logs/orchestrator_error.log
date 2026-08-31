@@ -89,3 +89,18 @@ NameError: name 'AuthenticationException' is not defined
 2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 6: Failed to login to crunchyroll mega fan
 2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 7: Failed to login to disney standard
 2026-08-30 19:18:23 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 8: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 2: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 3: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 4: Failed to login to disney standard
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 5: Failed to login to disney premium
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 6: Failed to login to crunchyroll mega fan
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 7: Failed to login to disney standard
+2026-08-30 22:03:22 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 8: Failed to login to disney premium
+2026-08-30 22:07:47 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:10:10 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:16:56 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:20:08 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:21:52 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:24:38 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney
+2026-08-30 22:29:38 - orchestrator - ERROR - [orchestrator_service.py:212] - Authentication failed for account 1: Failed to login to disney

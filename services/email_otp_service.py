@@ -30,7 +30,16 @@ class EmailOTPService:
         self.token_path = token_path or os.getenv('GMAIL_TOKEN_PATH', 'token.pickle')
         self.service = None
         self._authenticate()
-    
+        
+    async def get_latest_otp(self, sender_filter: Optional[str] = None, subject_filter: Optional[str] = None, keyword: Optional[str] = None, minutes_ago: int = 5, **kwargs):
+        """Alias de compatibilidad para get_latest_otp_code con tolerancia a argumentos extra"""
+        return self.get_latest_otp_code(
+            sender_filter=sender_filter,
+            subject_filter=subject_filter,
+            keyword=keyword,
+            minutes_ago=minutes_ago
+        )
+
     def _authenticate(self):
         """Authenticate with Gmail API using OAuth2"""
         try:
@@ -541,3 +550,5 @@ class EmailOTPService:
 
         logger.warning(f"[IMAP] Disney+ OTP not found within {timeout_seconds}s for {email_address}")
         return None
+
+        
