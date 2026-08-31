@@ -1,12 +1,16 @@
 import re
 import base64
 import email
+import imaplib
+import ssl
 from email.message import EmailMessage
+from email.header import decode_header
 from typing import Optional, Dict, Any, List
 from datetime import datetime, timedelta
 import logging
 import os
 import pickle
+import time
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -315,3 +319,225 @@ class EmailOTPService:
         except Exception as e:
             logger.error(f"Error getting unread count: {e}")
             return 0
+
+    @staticmethod
+    def _decode_imap_header(raw_header: str) -> str:
+        """Decode MIME encoded-word headers into a readable UTF-8 string."""
+        try:
+            parts = decode_header(raw_header)
+            decoded = []
+            for text, charset in parts:
+                if isinstance(text, bytes):
+                    try:
+                        decoded.append(text.decode(charset or 'utf-8', errors='replace'))
+                    except Exception:
+                        decoded.append(text.decode('utf-8', errors='replace'))
+                else:
+                    decoded.append(str(text))
+            return " ".join(decoded)
+        except Exception:
+            return str(raw_header)
+
+    @staticmethod
+    def _extract_body_from_imap_message(msg) -> str:
+        """Extract plain text + HTML body from an IMAP email.message.Message."""
+        body_parts = []
+        try:
+            if msg.is_multipart():
+                for part in msg.walk():
+                    content_type = part.get_content_type()
+                    content_disposition = str(part.get("Content-Disposition", ""))
+                    if "attachment" in content_disposition:
+                        continue
+                    if content_type in ("text/plain", "text/html"):
+                        payload = part.get_payload(decode=True)
+                        if payload:
+                            charset = part.get_content_charset() or "utf-8"
+                            try:
+                                body_parts.append(payload.decode(charset, errors="replace"))
+                            except Exception:
+                                body_parts.append(payload.decode("utf-8", errors="replace"))
+            else:
+                payload = msg.get_payload(decode=True)
+                if payload:
+                    charset = msg.get_content_charset() or "utf-8"
+                    try:
+                        body_parts.append(payload.decode(charset, errors="replace"))
+                    except Exception:
+                        body_parts.append(payload.decode("utf-8", errors="replace"))
+        except Exception as e:
+            logger.error(f"Error extracting body from IMAP message: {e}")
+        return "\n".join(body_parts)
+
+    def get_disney_otp_via_imap(
+        self,
+        email_address: str,
+        app_password: str,
+        timeout_seconds: int = 30,
+        poll_interval: int = 3,
+        minutes_ago: int = 5
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Fetch the most recent Disney+ 6-digit OTP code via Gmail IMAP using an
+        App Password (16 chars).
+
+        Args:
+            email_address: Gmail address (e.g., usuario@gmail.com)
+            app_password: Google 16-character App Password (no spaces, or w/ spaces)
+            timeout_seconds: Max seconds to poll for a new email
+            poll_interval: Seconds between IMAP polls
+            minutes_ago: Lookback window for recent messages
+
+        Returns:
+            Dict with keys: code, from, subject, date, body_preview, message_id
+            None if no OTP was found within the timeout.
+        """
+        if not email_address or not app_password:
+            logger.error("get_disney_otp_via_imap called without email_address or app_password")
+            return None
+
+        clean_password = app_password.replace(" ", "")
+        cutoff_date = (datetime.now() - timedelta(minutes=minutes_ago))
+        start_ts = time.time()
+        last_seen_ids: set = set()
+
+        disney_senders = [
+            "disneyplus.com",
+            "disney-plus.com",
+            "thewaltdisneycompany.com",
+            "disney.com",
+            "no-reply@disneyplus.com",
+            "noreply@disneyplus.com",
+        ]
+        disney_subjects = [
+            "verification",
+            "código",
+            "codigo",
+            "one-time",
+            "otp",
+            "security",
+            "seguridad",
+            "iniciar sesión",
+            "sign-in",
+            "sign in",
+            "access",
+            "acceso",
+        ]
+
+        logger.info(
+            f"[IMAP] Polling Disney+ OTP for {email_address} "
+            f"(timeout={timeout_seconds}s, lookback={minutes_ago}m)"
+        )
+
+        while (time.time() - start_ts) < timeout_seconds:
+            mail = None
+            try:
+                ctx = ssl.create_default_context()
+                mail = imaplib.IMAP4_SSL("imap.gmail.com", 993, ssl_context=ctx)
+                mail.login(email_address, clean_password)
+                mail.select("INBOX", readonly=True)
+
+                status, _ = mail.search(None, f'(SINCE "{cutoff_date.strftime("%d-%b-%Y")}")')
+                if status != "OK":
+                    logger.warning("[IMAP] SEARCH command returned non-OK status")
+                    mail.close()
+                    mail.logout()
+                    time.sleep(poll_interval)
+                    continue
+
+                msg_ids = _[0].split() if _ and _[0] else []
+                msg_ids = list(reversed(msg_ids))
+
+                if not msg_ids:
+                    logger.debug("[IMAP] No messages found in lookback window")
+                    mail.close()
+                    mail.logout()
+                    time.sleep(poll_interval)
+                    continue
+
+                for msg_id in msg_ids:
+                    if msg_id in last_seen_ids:
+                        continue
+                    last_seen_ids.add(msg_id)
+
+                    status, msg_data = mail.fetch(msg_id, "(RFC822)")
+                    if status != "OK" or not msg_data or not msg_data[0]:
+                        continue
+
+                    raw_email = msg_data[0][1]
+                    msg = email.message_from_bytes(raw_email)
+
+                    raw_from = msg.get("From", "")
+                    raw_subject = msg.get("Subject", "")
+                    raw_date = msg.get("Date", "")
+                    sender = self._decode_imap_header(raw_from)
+                    subject = self._decode_imap_header(raw_subject)
+
+                    sender_lc = sender.lower()
+                    subject_lc = subject.lower()
+                    matches_sender = any(s in sender_lc for s in disney_senders)
+                    matches_subject = any(k in subject_lc for k in disney_subjects)
+
+                    if not (matches_sender or matches_subject):
+                        continue
+
+                    body_text = self._extract_body_from_imap_message(msg)
+                    combined_search_text = f"{subject} {body_text}"
+                    otp_codes = self._extract_otp_patterns(combined_search_text)
+
+                    six_digit_codes = [c for c in otp_codes if c.isdigit() and len(c) == 6]
+                    if not six_digit_codes:
+                        six_digit_codes = [c for c in otp_codes if len(c) == 6]
+
+                    if six_digit_codes:
+                        chosen = six_digit_codes[0]
+                        logger.info(
+                            f"[IMAP] Disney+ OTP found: {chosen} "
+                            f"(from={sender[:80]}, subject={subject[:80]})"
+                        )
+                        try:
+                            mail.close()
+                            mail.logout()
+                        except Exception:
+                            pass
+                        return {
+                            "code": chosen,
+                            "all_codes": otp_codes,
+                            "from": sender,
+                            "subject": subject,
+                            "date": raw_date,
+                            "message_id": msg.get("Message-ID", msg_id.decode() if isinstance(msg_id, bytes) else str(msg_id)),
+                            "body_preview": (body_text[:200] + "...") if len(body_text) > 200 else body_text,
+                            "via": "IMAP",
+                        }
+
+                try:
+                    mail.close()
+                    mail.logout()
+                except Exception:
+                    pass
+
+            except imaplib.IMAP4.error as e:
+                logger.error(f"[IMAP] Authentication/IMAP error for {email_address}: {e}")
+                return None
+            except Exception as e:
+                logger.error(f"[IMAP] Unexpected error while polling OTP: {e}")
+                try:
+                    if mail is not None:
+                        try:
+                            mail.close()
+                        except Exception:
+                            pass
+                        try:
+                            mail.logout()
+                        except Exception:
+                            pass
+                except Exception:
+                    pass
+            finally:
+                mail = None
+
+            time.sleep(poll_interval)
+
+        logger.warning(f"[IMAP] Disney+ OTP not found within {timeout_seconds}s for {email_address}")
+        return None
